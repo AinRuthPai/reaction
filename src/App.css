@@ -51,8 +51,7 @@ button:hover {
   cursor: pointer;
 }
 
-.circle,
-.greenCircle {
+.circle {
   width: 30rem;
   height: 30rem;
   margin: 3rem 0;
@@ -62,11 +61,12 @@ button:hover {
   align-items: center;
   border-radius: 50%;
   background-color: beige;
+  user-select: none;
+  cursor: pointer;
 }
 
 .blueCircle {
   background-color: aqua;
-  cursor: pointer;
 }
 
 .circle p {
