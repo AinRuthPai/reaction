@@ -8,15 +8,19 @@ function GamePage() {
   const startTime = useRef();
   const endTime = useRef();
 
+  function time() {
+    setTimeout(() => {
+      setReady(false);
+      startTime.current = new Date();
+    }, Math.floor((Math.random() * 4 + 2) * 1000));
+  }
+
   // 1. 클릭 화면이 랜덤한 시간에 생성 (2~5초)
   useEffect(() => {
     if (ready === true) {
-      setTimeout(() => {
-        setReady(false);
-        startTime.current = new Date();
-      }, Math.floor((Math.random() * 4 + 2) * 1000));
+      time();
     }
-  });
+  }, []);
 
   // 2. 대기 화면에서 클릭 시 경고 화면으로 넘어가고, 클릭 시 다시 대기화면으로 복귀
   // 일단 alert으로 해결
